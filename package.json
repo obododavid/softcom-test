@@ -1,0 +1,7 @@
+{
+  "name": "obodo_softcom_test",
+  "version": "1.0.0",
+  "description": "softcom front end assesstment coding challenge",
+  "main": "index.js",
+  "license": "MIT"
+}

@@ -108,9 +108,13 @@ const Form = () => {
     return (
         <FormContainer>
             {Input_fields.map(input => {
-                const { name } = input;
+                const { name, type, placeholder, state } = input;
                 return <Input
-                    key={name} />
+                    key={name}
+                    name={name}
+                    type={type}
+                    placeholder={placeholder}
+                />
             })}
         </FormContainer>
     )

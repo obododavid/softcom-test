@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FormContainer } from './style';
+import Input from '../input/input';
 
 const Form = () => {
 
@@ -53,7 +54,7 @@ const Form = () => {
 
     const [err, setErr] = useState(true)
 
-    const input_fields = [
+    const Input_fields = [
         {
             type: 'text',
             name: 'fullName',
@@ -106,7 +107,11 @@ const Form = () => {
 
     return (
         <FormContainer>
-            This is the form
+            {Input_fields.map(input => {
+                const { name } = input;
+                return <Input
+                    key={name} />
+            })}
         </FormContainer>
     )
 }

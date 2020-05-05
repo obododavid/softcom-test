@@ -58,19 +58,19 @@ const Form = () => {
         {
             type: 'text',
             name: 'fullName',
-            placeholder: 'Obodo David',
+            placeholder: 'Full Name',
             state: fullName
         },
         {
             type: 'email',
             name: 'email',
-            placeholder: 'obododavid@gmail.com',
+            placeholder: 'Email',
             state: email
         },
         {
             type: 'tel',
             name: 'phone',
-            placeholder: '080XXXXXXXX',
+            placeholder: 'Phone number',
             state: phone
         },
         {
@@ -88,19 +88,19 @@ const Form = () => {
         {
             type: 'text',
             name: 'cardNumber',
-            placeholder: 'XXXX XXXX XXXX XXXX',
+            placeholder: 'Credit/Debit Card Number',
             state: cardNumber
         },
         {
             type: 'text',
             name: 'expiryDate',
-            placeholder: 'mm/yy',
+            placeholder: 'Expiration date',
             state: expiryDate
         },
         {
             type: 'password',
             name: 'pin',
-            placeholder: '****',
+            placeholder: 'PIN',
             state: pin
         },
     ]

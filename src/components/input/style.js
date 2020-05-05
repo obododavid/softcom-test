@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Inputcontainer = styled.div`
     position: relative;
 
-    input{
+    .input-field{
         border: 1px solid #f2f4f7;
         border-color: rgba(10,46,101,.2);
         border-radius: 5px;
@@ -24,12 +24,20 @@ export const Inputcontainer = styled.div`
             border-color: #0066f5;
         }
 
-        &:focus + label{
+        &:focus + .input-label{
             color: #0066f5;
+        }
+
+        &.error{
+            border-color: #ff0000;
+        }
+
+        &.error + .input-label{
+            color: #ff0000;
         }
     }
 
-    label{
+    .input-label{
         position: absolute;
         top: -19px;
         left: 12px;
@@ -42,5 +50,26 @@ export const Inputcontainer = styled.div`
         transition-property: top, opacity;
 
         ${({ focus }) => focus && 'top: -12px; opacity: 1'};
+    }
+
+    .error-message{
+        margin-top: 5px;
+        color: #ff0000;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+
+        span{
+            background-color: #ff0000;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 5px;
+        }
     }
 `

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FormContainer } from './style';
 import Input from '../input/input';
+import { handleCheckEmailValidity, handleCheckPasswordValidity } from '../../utils';
 
 const Form = () => {
 
@@ -112,7 +113,7 @@ const Form = () => {
         if (value.length < 2) {
             setFullName({ ...fullName, hasError: true, errorMessage: 'Name must not be less than two characters' })
         } else if (wordCount < 2 && value.length >= 2) {
-            setFullName({ ...fullName, hasError: true, errorMessage: 'Name must include a space and then a second name' })
+            setFullName({ ...fullName, hasError: true, errorMessage: 'Name must include a space and then second name' })
         } else {
             setFullName({ ...fullName, hasError: false, errorMessage: '' })
         }
@@ -276,6 +277,8 @@ const Form = () => {
                     value={state.value}
                     handleOnChange={handleOnChange}
                     handleOnBlur={handleValidateInput}
+                    hasError={state.hasError}
+                    errorMessage={state.errorMessage}
                 />
             })}
         </FormContainer>

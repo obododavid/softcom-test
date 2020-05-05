@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Inputcontainer } from './style';
 
 const Input = ({ type, name, placeholder }) => {
+    const [focus, setFocus] = useState(false)
     return (
-        <Inputcontainer>
-            <input type={type} name={name} placeholder={placeholder} />
+        <Inputcontainer focus={focus}>
+            <input
+                type={type}
+                name={name}
+                placeholder={placeholder}
+                onFocus={() => setFocus(true)} />
+            <label>{placeholder}</label>
         </Inputcontainer>
     )
 }

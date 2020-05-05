@@ -54,6 +54,58 @@ const Form = () => {
 
     const [err, setErr] = useState(true)
 
+    const handleOnChange = (e) => {
+        const { name, value } = e.target;
+
+        if (name === 'fullName') {
+            setFullName({ ...fullName, value })
+        }
+
+        if (name === 'email') {
+            setEmail({ ...email, value })
+        }
+
+        if (name === 'phone') {
+            const _value = value.match(/\d/g) || [];
+            const joinNumbers = _value.join("")
+            if (value.length <= 11) {
+                setPhone({ ...phone, value: joinNumbers })
+            }
+        }
+
+        if (name === 'password') {
+            setPassword({ ...password, value })
+        }
+
+        if (name === 'confirmPassword') {
+            setConfirmPassword({ ...confirmPassword, value })
+        }
+
+        if (name === 'cardNumber') {
+            const _value = value.match(/(\d{1,4})/g) || [];
+            const formattedValue = _value.join(" ");
+            if (value.length <= 19) {
+                setCardNumber({ ...cardNumber, value: formattedValue });
+            }
+        }
+
+        if (name === 'expiryDate') {
+            const _value = value.match(/(\d{1,2})/g) || [];
+            const formattedValue = _value.join("/");
+            if (value.length <= 5) {
+                setExpiryDate({ ...expiryDate, value: formattedValue });
+            }
+        }
+
+        if (name === 'pin') {
+            const _value = value.match(/\d/g) || [];
+            const formattedValue = _value.join("");
+            if (value.length <= 4) {
+                setPin({ ...pin, value: formattedValue });
+            }
+        }
+    }
+
     const Input_fields = [
         {
             type: 'text',
@@ -114,6 +166,8 @@ const Form = () => {
                     name={name}
                     type={type}
                     placeholder={placeholder}
+                    value={state.value}
+                    handleOnChange={handleOnChange}
                 />
             })}
         </FormContainer>

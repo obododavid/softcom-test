@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Inputcontainer } from './style';
 
-const Input = ({ type, name, placeholder }) => {
+const Input = ({ type, name, placeholder, value, handleOnChange }) => {
     const [focus, setFocus] = useState(false)
     return (
         <Inputcontainer focus={focus}>
@@ -9,7 +9,9 @@ const Input = ({ type, name, placeholder }) => {
                 type={type}
                 name={name}
                 placeholder={placeholder}
-                onFocus={() => setFocus(true)} />
+                onFocus={() => setFocus(true)}
+                value={value}
+                onChange={handleOnChange} />
             <label>{placeholder}</label>
         </Inputcontainer>
     )

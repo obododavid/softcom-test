@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FormContainer } from './style';
 import Input from '../input/input';
 import Button from '../button/button';
@@ -219,6 +219,22 @@ const Form = () => {
 
     }
 
+    useEffect(() => {
+        if (fullName.value.length >= 5 &&
+            handleCheckEmailValidity(email.value) &&
+            phone.value.length === 11 &&
+            handleCheckPasswordValidity(password.value) &&
+            confirmPassword.value === password.value &&
+            cardNumber.value.length === 19 &&
+            expiryDate.value.length === 5 &&
+            pin.value.length === 4) {
+            setErr(false)
+        } else {
+            setErr(true)
+        }
+
+    }, [fullName, email, phone, password, confirmPassword, cardNumber, expiryDate, pin])
+
     const Input_fields = [
         {
             type: 'text',
@@ -286,7 +302,7 @@ const Form = () => {
                     errorMessage={state.errorMessage}
                 />
             })}
-            <Button disabled={true} handleOnClick={handleOnSubmit}>Submit</Button>
+            <Button disabled={err} handleOnClick={handleOnSubmit}>Submit</Button>
         </FormContainer>
     )
 }

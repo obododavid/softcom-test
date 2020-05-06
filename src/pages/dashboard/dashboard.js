@@ -32,7 +32,6 @@ const Dashboard = () => {
         }, 1000)
     }, [])
 
-    console.log(fadeIn)
     return (
         <DashboardContainer fadeIn={fadeIn}>
             <h1>Welcome to Softc<span>o</span>m!</h1>

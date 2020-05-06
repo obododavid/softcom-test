@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
+import { devices } from '../../styling/devices';
 
 import Form from '../../components/form/form';
 import Spinner from '../../components/spinner/spinner';
-import styled from 'styled-components';
-import { devices } from '../../styling/devices';
 
 const AuthContainer = styled.div`
     display: flex;

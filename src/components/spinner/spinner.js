@@ -4,7 +4,7 @@ import Backdrop from '../backdrop/backdrop';
 
 const Spinner = () => {
     return (
-        <>
+        <React.Fragment>
             <Backdrop />
             <SpinnerContainer>
                 <div></div>
@@ -20,7 +20,7 @@ const Spinner = () => {
                 <div></div>
                 <div></div>
             </SpinnerContainer>
-        </>
+        </React.Fragment>
     );
 };
 

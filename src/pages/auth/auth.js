@@ -16,7 +16,7 @@ const AuthContainer = styled.div`
     background-color: #f4f7fa;
 
     @media ${devices.mobile}{
-        min-height: 700px;
+        min-height: 900px;
     }
 
     header{

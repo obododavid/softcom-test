@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { FormContainer } from './style';
 import Input from '../input/input';
 import Button from '../button/button';
@@ -302,6 +303,10 @@ const Form = ({ handleOnSubmit }) => {
             <Button disabled={err} handleOnClick={handleOnSubmit}>Submit</Button>
         </FormContainer>
     )
+}
+
+Form.propTypes = {
+    handleOnSubmit: PropTypes.func.isRequired
 }
 
 export default Form;

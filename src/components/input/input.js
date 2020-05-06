@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Inputcontainer } from './style';
 
 const Input = ({ type, name, placeholder, value, handleOnChange, handleOnBlur, hasError, errorMessage }) => {
@@ -18,6 +19,22 @@ const Input = ({ type, name, placeholder, value, handleOnChange, handleOnBlur, h
             {hasError && <h6 className='error-message'><span>!</span>{errorMessage}</h6>}
         </Inputcontainer>
     )
+}
+
+Input.propTypes = {
+    type: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    handleOnChange: PropTypes.func.isRequired,
+    handleOnBlur: PropTypes.func,
+    hasError: PropTypes.bool,
+    errorMessage: PropTypes.string
+}
+
+Input.defaultProps = {
+    value: '',
+    type: 'text'
 }
 
 export default Input;

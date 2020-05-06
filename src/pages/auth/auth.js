@@ -1,5 +1,8 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+
 import Form from '../../components/form/form';
+import Spinner from '../../components/spinner/spinner';
 import styled from 'styled-components';
 
 const AuthContainer = styled.div`
@@ -31,10 +34,16 @@ const AuthContainer = styled.div`
 `
 
 const Auth = () => {
+    const history = useHistory();
+    const handleOnSubmit = e => {
+        e.preventDefault();
+        history.push('/dashboard')
+    }
     return (
         <AuthContainer>
+            {/* <Spinner /> */}
             <header><span>Softc<span>o</span>m</span> Front end Assessment</header>
-            <Form />
+            <Form handleOnSubmit={handleOnSubmit} />
         </AuthContainer>
     )
 }

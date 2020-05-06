@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { FormContainer } from './style';
 import Input from '../input/input';
 import Button from '../button/button';
 import { handleCheckEmailValidity, handleCheckPasswordValidity } from '../../utils';
 
-const Form = () => {
-    const history = useHistory();
+const Form = ({ handleOnSubmit }) => {
     const [fullName, setFullName] = useState({
         value: '',
         hasError: false,
@@ -216,10 +214,7 @@ const Form = () => {
         }
     }
 
-    const handleOnSubmit = e => {
-        e.preventDefault();
-        history.push('/dashboard')
-    }
+
 
     useEffect(() => {
         if (fullName.value.length >= 5 &&

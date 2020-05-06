@@ -23,7 +23,7 @@ export const SpinnerContainer = styled.div`
             width: 6px;
             height: 18px;
             border-radius: 20%;
-            background: #2e5c87;
+            background: #0297CD;
         }
 
         &:nth-child(1) {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import Form from '../../components/form/form';
@@ -35,13 +35,19 @@ const AuthContainer = styled.div`
 
 const Auth = () => {
     const history = useHistory();
+    const [isLoading, setIsLoading] = useState(false)
     const handleOnSubmit = e => {
         e.preventDefault();
-        history.push('/dashboard')
+        setIsLoading(true);
     }
+    useEffect(() => {
+        if (isLoading === true) {
+            setTimeout(() => history.push('/dashboard'), 2000)
+        }
+    }, [isLoading])
     return (
         <AuthContainer>
-            {/* <Spinner /> */}
+            {isLoading && <Spinner />}
             <header><span>Softc<span>o</span>m</span> Front end Assessment</header>
             <Form handleOnSubmit={handleOnSubmit} />
         </AuthContainer>

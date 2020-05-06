@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FormContainer } from './style';
 import Input from '../input/input';
+import Button from '../button/button';
 import { handleCheckEmailValidity, handleCheckPasswordValidity } from '../../utils';
 
 const Form = () => {
@@ -281,6 +282,7 @@ const Form = () => {
                     errorMessage={state.errorMessage}
                 />
             })}
+            <Button>Submit</Button>
         </FormContainer>
     )
 }

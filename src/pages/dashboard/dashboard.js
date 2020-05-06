@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const DashboardContainer = styled.div`
@@ -12,6 +12,10 @@ const DashboardContainer = styled.div`
 
     h1{
         font-size: 6vw;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+
+        ${({ fadeIn }) => fadeIn && 'opacity: 1'};
 
         span{
             color: #FFB700;
@@ -20,8 +24,17 @@ const DashboardContainer = styled.div`
 `;
 
 const Dashboard = () => {
+    const [fadeIn, setFadeIn] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => {
+            setFadeIn(true)
+        }, 1000)
+    }, [])
+
+    console.log(fadeIn)
     return (
-        <DashboardContainer>
+        <DashboardContainer fadeIn={fadeIn}>
             <h1>Welcome to Softc<span>o</span>m!</h1>
         </DashboardContainer>
     )

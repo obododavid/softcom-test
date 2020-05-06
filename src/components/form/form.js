@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { FormContainer } from './style';
 import Input from '../input/input';
 import Button from '../button/button';
 import { handleCheckEmailValidity, handleCheckPasswordValidity } from '../../utils';
 
 const Form = () => {
-
+    // const history = useHistory();
+    console.log(useHistory())
     const [fullName, setFullName] = useState({
         value: '',
         hasError: false,
@@ -216,7 +218,9 @@ const Form = () => {
     }
 
     const handleOnSubmit = e => {
-
+        e.preventDefault();
+        alert('hehehe')
+        // history.push('/dashboard')
     }
 
     useEffect(() => {
@@ -287,7 +291,7 @@ const Form = () => {
     ]
 
     return (
-        <FormContainer>
+        <FormContainer >
             {Input_fields.map(input => {
                 const { name, type, placeholder, state } = input;
                 return <Input

@@ -1,22 +1,21 @@
 import React from 'react';
-import Form from './components/form/form';
-import styled from 'styled-components';
-
-const AppContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    min-height: 800px;
-    align-items: center;
-    background-color: #f4f7fa;
-`
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { GlobalStyles } from './globalStyles';
+import Auth from './pages/auth/auth';
 
 const App = () => {
     return (
-        <AppContainer>
-            <Form />
-        </AppContainer>
+        <React.Fragment>
+            <GlobalStyles />
+            <Router>
+                <Switch>
+                    <Route path='/' component={Auth} />
+                    {/* <Route path='/dashboard' component={Dashboard} /> */}
+                </Switch>
+            </Router>
+        </React.Fragment>
+
     )
 }
 
-export default App;
+export default App

@@ -21,11 +21,11 @@ export const Inputcontainer = styled.div`
         }
 
         &:focus{
-            border-color: #0066f5;
+            border-color:  #0297CD;
         }
 
         &:focus + .input-label{
-            color: #0066f5;
+            color:  #0297CD;
         }
 
         &.error{

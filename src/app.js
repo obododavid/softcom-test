@@ -10,8 +10,8 @@ const App = () => {
             <GlobalStyles />
             <Router>
                 <Switch>
-                    <Route exact path='/' component={Auth} />
-                    <Route exact path='/dashboard' component={Dashboard} />
+                    {/* <Route exact path='/' component={Auth} /> */}
+                    <Route exact path='/' component={Dashboard} />
                 </Switch>
             </Router>
         </React.Fragment>

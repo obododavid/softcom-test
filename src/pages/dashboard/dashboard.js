@@ -9,12 +9,18 @@ const DashboardContainer = styled.div`
     align-items: center;
     font-size: 50px;
     color: #0297CD;
+
+    h1{
+        span{
+            color: #FFB700;
+        }
+    }
 `;
 
 const Dashboard = () => {
     return (
         <DashboardContainer>
-            <h1>Welcome to Softcom!</h1>
+            <h1>Welcome to Softc<span>o</span>m!</h1>
         </DashboardContainer>
     )
 }

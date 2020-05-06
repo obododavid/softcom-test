@@ -215,6 +215,10 @@ const Form = () => {
         }
     }
 
+    const handleOnSubmit = e => {
+
+    }
+
     const Input_fields = [
         {
             type: 'text',
@@ -282,7 +286,7 @@ const Form = () => {
                     errorMessage={state.errorMessage}
                 />
             })}
-            <Button>Submit</Button>
+            <Button disabled={true} handleOnClick={handleOnSubmit}>Submit</Button>
         </FormContainer>
     )
 }

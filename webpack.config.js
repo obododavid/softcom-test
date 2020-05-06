@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const mode = process.env.NODE_ENV || 'development';
+var mode = process.env.NODE_ENV || 'development';
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     mode: mode,
@@ -20,13 +21,9 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react'],
-                        plugins: ["babel-plugin-styled-components"]
-                    }
-                }
+                resolve: { extensions: ['.js', '.jsx'] },
+                include: path.resolve(__dirname, 'src'),
+                use: ['babel-loader']
             }
         ]
     },
@@ -34,6 +31,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'index.html',
             inject: 'body'
-        })
+        }),
+        new CleanWebpackPlugin()
     ]
 }

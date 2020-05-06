@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Form from '../../components/form/form';
 import Spinner from '../../components/spinner/spinner';
 import styled from 'styled-components';
+import { devices } from '../../styling/devices';
 
 const AuthContainer = styled.div`
     display: flex;
@@ -13,6 +14,10 @@ const AuthContainer = styled.div`
     min-height: 1000px;
     align-items: center;
     background-color: #f4f7fa;
+
+    @media ${devices.mobile}{
+        min-height: 700px;
+    }
 
     header{
         color: black;
